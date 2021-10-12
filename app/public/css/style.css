@@ -1,0 +1,102 @@
+img {
+    border-radius: 50%;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    background-color: crimson;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    border: 1.2px solid black;
+    padding: 10px;
+}
+
+body {
+    background-color: #93D4FB;
+}
+
+header {
+    background-color: crimson;
+    text-align: center;
+    font-size: 30px;
+}
+
+input {
+    width: 30%;
+}
+
+.em {
+    color: yellow;
+}
+
+#h {
+    color: teal;
+}
+
+.source {
+    color: slategrey;
+}
+
+nav {
+    background-color: gray;
+}
+
+.cite {
+    color: white;
+    font-size: small;
+}
+
+th[role=columnheader]:not(.no-sort) {
+	cursor: pointer;
+}
+
+th[role=columnheader]:not(.no-sort):after {
+	content: '';
+	float: right;
+	margin-top: 7px;
+	border-width: 0 4px 4px;
+	border-style: solid;
+	border-color: red;
+	opacity: 0.7;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+th[aria-sort=ascending]:not(.no-sort):after {
+	border-bottom: none;
+	border-width: 4px 4px 0;
+}
+
+th[aria-sort]:not(.no-sort):after {
+	visibility: visible;
+	opacity: 0.4;
+}
+
+th[role=columnheader]:not(.no-sort):hover:after {
+	visibility: visible;
+	opacity: 1;
+}
+/* 
+#someApp {
+    text-align: center;
+} */
+
+/* #someApp p {
+    margin-left: auto;
+    margin-right:auto;
+    text-align:center;
+} */
+
+.sm {
+    background-color: darkblue;
+    color: white;
+}
+
+.j {
+    align: center;
+    text-align: center;
+}
