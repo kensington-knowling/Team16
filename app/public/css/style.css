@@ -5,7 +5,7 @@ img {
 footer {
     position: absolute;
     width: 100%;
-    background-color: black;
+    background-color: crimson;
     color: white;
     font-family: sans-serif;
     text-align: center;
@@ -14,7 +14,7 @@ footer {
 }
 
 body {
-    background-color: #93D4FB;
+    background-color: white;
 }
 
 header {
