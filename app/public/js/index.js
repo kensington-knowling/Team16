@@ -1,5 +1,5 @@
 
-const SomeApp = {
+const refApp = {
     data() {
       return {
         students: [],
@@ -139,4 +139,4 @@ const SomeApp = {
   
   }
   
-  Vue.createApp(SomeApp).mount('#offerApp');
+  Vue.createApp(refApp).mount('#refApp');
