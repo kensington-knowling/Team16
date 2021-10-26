@@ -1,4 +1,4 @@
 MYSQL_DATABASE=msisdb
 MYSQL_HOST=jaydbserver.ciax8opy4oph.us-east-2.rds.amazonaws.com
 MYSQL_USER=jay
-MYSQL_PASSWORD=Super1234
+MYSQL_PASSWORD=Super123
