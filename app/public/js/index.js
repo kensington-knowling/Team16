@@ -2,11 +2,11 @@
 const refApp = {
     data() {
       return {
-        students: [],
-        selectedStudent: null,
-        offers: [],
-        offerForm: {},
-        selectedOffer: null
+        referees: [],
+        selectedReferee: null,
+        games: [],
+        gameForm: {},
+        selectedGame: null
       }
     },
     computed: {},
@@ -19,16 +19,16 @@ const refApp = {
             const d = new Intl.NumberFormat("en-US").format(n);
             return "$ " + d;
         },
-        selectStudent(s) {
-            if (s == this.selectedStudent) {
+        selectReferee(r) {
+            if (r == this.selectedReferee) {
                 return;
             }
-            this.selectedStudent = s;
-            this.offers = [];
-            this.fetchOfferData(this.selectedStudent);
+            this.selectedReferee = r;
+            this.games = [];
+            this.fetchGameData(this.selectedReferee);
         },
-        fetchStudentData() {
-            fetch('/api/student/')
+        fetchRefereeData() {
+            fetch('/api/referee/')
             .then( response => response.json() )
             .then( (responseJson) => {
                 console.log(responseJson);
@@ -38,9 +38,9 @@ const refApp = {
                 console.error(err);
             })
         },
-        fetchOfferData(s) {
-            console.log("Fetching offer data for ", s);
-            fetch('/api/offer/?student=' + s.id)
+        fetchGameData(g) {
+            console.log("Fetching game data for ", g);
+            fetch('/api/game/?referee=' + g.ref_id)
             .then( response => response.json() )
             .then( (responseJson) => {
                 console.log(responseJson);
@@ -53,21 +53,17 @@ const refApp = {
                 console.error(error);
             });
         },
-        postOffer(evt) {
+        postGame(evt) {
           if (this.selectedOffer === null) {
               this.postNewOffer(evt);
           } else {
               this.postEditOffer(evt);
           }
         },
-        postNewOffer(evt) {
-          this.offerForm.studentId = this.selectedStudent.id;        
-          
-          console.log("Creating!", this.offerForm);
-  
-          fetch('api/offer/create.php', {
+        postNewGame(evt) {
+          fetch('api/game/create.php', {
               method:'POST',
-              body: JSON.stringify(this.offerForm),
+              body: JSON.stringify(this.gameForm),
               headers: {
                 "Content-Type": "application/json; charset=utf-8"
               }
@@ -78,18 +74,13 @@ const refApp = {
               // TODO: test a result was returned!
               this.offers = json;
               
-              this.resetOfferForm();
+              this.resetGameForm();
             });
         },
-        postEditOffer(evt) {
-          this.offerForm.studentId = this.selectedStudent.id;
-          this.offerForm.id = this.selectedOffer.id;       
-          
-          console.log("Updating!", this.offerForm);
-  
-          fetch('api/offer/update.php', {
+        postEditGame(evt) {
+          fetch('api/game/update.php', {
               method:'POST',
-              body: JSON.stringify(this.offerForm),
+              body: JSON.stringify(this.gameForm),
               headers: {
                 "Content-Type": "application/json; charset=utf-8"
               }
@@ -100,17 +91,17 @@ const refApp = {
               // TODO: test a result was returned!
               this.offers = json;
               
-              this.resetOfferForm();
+              this.resetGameForm();
             });
         },
-        postDeleteOffer(o) {
-          if (!confirm("Are you sure you want to delete the offer from "+o.companyName+"?")) {
+        postDeleteGame(g) {
+          if (!confirm("Are you sure you want to delete the offer from "+g.game_id+"?")) {
               return;
           }
           
-          fetch('api/offer/delete.php', {
+          fetch('api/game/delete.php', {
               method:'POST',
-              body: JSON.stringify(o),
+              body: JSON.stringify(g),
               headers: {
                 "Content-Type": "application/json; charset=utf-8"
               }
@@ -121,20 +112,20 @@ const refApp = {
               // TODO: test a result was returned!
               this.offers = json;
               
-              this.resetOfferForm();
+              this.resetGameForm();
             });
         },
-        selectOffer(o) {
-          this.selectedOffer = o;
-          this.offerForm = Object.assign({}, this.selectedOffer);
+        selectGame(g) {
+          this.selectedGame = g;
+          this.gameForm = Object.assign({}, this.selectedGame);
         },
-        resetOfferForm() {
-          this.selectedOffer = null;
-          this.offerForm = {};
+        resetGameForm() {
+          this.selectedGame = null;
+          this.gameForm = {};
         }
     },
     created() {
-        this.fetchStudentData();
+        this.fetchRefereetData();
     }
   
   }
