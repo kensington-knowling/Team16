@@ -6,7 +6,7 @@ require 'class/DbConnection.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM student';
+$sql = 'SELECT * FROM Referee';
 $vars = [];
 
 // if (isset($_GET['guid'])) {
@@ -18,10 +18,10 @@ $vars = [];
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
-$students = $stmt->fetchAll();
+$referee = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
-$json = json_encode($students, JSON_PRETTY_PRINT);
+$json = json_encode($referee, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: application/json');
