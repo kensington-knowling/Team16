@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Page Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  </head>
+  <body>
+    <header>
+        <a href="https://assets.iu.edu/brand/3.2.x/trident-large.png">
+            <img src="img/trident-large.png" alt="IU Logo" width="50" height="50">
+        </a>
+        Indiana Referees 
+        <a href="https://assets.iu.edu/brand/3.2.x/trident-large.png">
+            <img src="img/trident-large.png" alt="IU Logo" width="50" height="50">
+        </a>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="games.html">Games</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="referees.html">Referees</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="assignment.html">Assignment</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reports.html">Reports</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    Reports
+    <div id="refApp" class="container">
+        <form v-on:submit.prevent="fetchReportsData()">
+            <div class="mb-3" class="dropdown">
+                <label for="opposition" class="form-label">Select Referee</label>
+                <select class="form-select" aria-label="Default select example" v-model="refereeForm.ref_id"
+                                id="ref_id">
+                        <option v-for="ref in referees" :value= 'ref.ref_id' >{{ ref.name }}</option>
+                </select>
+            </div> 
+            <div class="form-group">
+                <label for="startDate" class="form-label">From </label>
+                <input type="date" v-model="refereeForm.startDate" class="form-control" id="refereeForm.startDate">
+            </div>
+            <div class="form-group">
+                <label for="endDate" class="form-label">To </label>
+                <input type="date" v-model="refereeForm.endDate" class="form-control" id="refereeForm.endDate">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-outline-secondary btn-sm">Generate Report</button>
+        </form>
+        <div v-if="reportOne"> 
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Opposition</th>
+                  <th>Field</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+                <tbody>
+                    <tr v-for="g in games">
+                        <td>{{ g.opposition }}</td>
+                        <td>{{ g.field }}</td>
+                        <td>{{ g.time }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><a class = "reports" v-bind:href="'/api/reports/?ref=' + refereeForm.ref_id + '&startDate=' + refereeForm.startDate + '&endDate=' + refereeForm.endDate + '&format=csv'" download>Export as CSV</a></p><hr>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <h3>Games with no Referees</h3>
+        <form v-on:submit.prevent="fetchRepData()">
+            <button type="submit" class="btn btn-outline-secondary btn-sm">Generate Report</button>
+        </form>
+        <table id="" class="table table-hover table-light" >
+           <thead>
+               <tr>
+                   <th scope="col">Game</th>
+                   <th scope="col">Field</th>
+                   <th scope="col">Date</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr v-for="g in game">
+                  <td>{{ g.opposition }}</td>
+                  <td>{{ g.field }}</td>
+                  <td>{{ g.time }}</td>
+               </tr>         
+            </tbody>
+        </table>
+        <p><a href="/api/reports/unassigned.php/?&format=csv" download>Export as CSV</a></p>
+    </div> 
+    <footer> 
+      <a href="https://twitter.com/mindykaling/status/499028573504946176/photo/1">
+        <img src="img/trident-large.png" alt="IU" width="50" height="50">
+      </a>
+      Go IU! 
+      <a href="https://twitter.com/mindykaling/status/499028573504946176/photo/1">
+          <img src="img/trident-large.png" alt="IU" width="50" height="50">
+      </a>
+   </footer>
+   <script src="js/index.js"></script>
+  </body>
+</html>

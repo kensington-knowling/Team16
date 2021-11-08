@@ -31,14 +31,14 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO game (opposition, field, time)
+  'INSERT INTO assigned_to (ref_id, game_id, status)
   VALUES (?, ?, ?)'
 );
 
 $stmt->execute([
-  $_POST['opposition'],
-  $_POST['field'],
-  $_POST['time']
+  $_POST['ref_id'],
+  $_POST['game_id'],
+  $_POST['status']
 ]);
 
 // Get auto-generated PK from DB
