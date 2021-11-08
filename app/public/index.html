@@ -3,7 +3,7 @@
   <head>
     <title>My Page Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src='js/tablesort.min.js'></script>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
@@ -11,11 +11,11 @@
   <body>
     <header>
         <a href="https://assets.iu.edu/brand/3.2.x/trident-large.png">
-            <img src="img/iu_logo.png" alt="IU Logo" width="100" height="100">
+            <img src="img/trident-large.png" alt="IU Logo" width="50" height="50">
         </a>
         Indiana Referees 
         <a href="https://assets.iu.edu/brand/3.2.x/trident-large.png">
-            <img src="img/iu_logo.png" alt="IU Logo" width="100" height="100">
+            <img src="img/trident-large.png" alt="IU Logo" width="50" height="50">
         </a>
     </header>
     <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
@@ -32,20 +32,76 @@
               <a class="nav-link" href="referees.html">Referees</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="theconvict.html">The Convict</a>
+              <a class="nav-link" href="games.html">Games</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
+    <div id="refApp" class="container">
+      <table class="table table-primary table-striped" id="tb">
+        <thead>
+          <tr>
+            <th scope="col">Referee ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Skill</th>
+            <th scope="col">Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="ref in referees">
+            <td>{{ ref.ref_id }}</td>
+            <td>{{ ref.name }}</td>
+            <td>{{ ref.age }}</td>
+            <td>{{ ref.skill }}</td>
+            <td>{{ ref.grade }}</td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <form v-on:submit.prevent="postNewBook">
+        <h3 id="h">Add New Referee</h3>  
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" v-model="bookForm.Title"
+          class="form-control" id="title" >
+        </div>
+        <div class="mb-3">
+          <label for="author" class="form-label">Author</label>
+          <input type="text" v-model="bookForm.Author"
+          class="form-control" id="author">
+        </div>
+        <div class="mb-3">
+          <label for="yearpublished" class="form-label">Year Published</label>
+          <input type="number" v-model="bookForm.Year_Published"
+          class="form-control" id="yearpublished">
+        </div>
+        <div class="mb-3">
+          <label for="publisher" class="form-label">Publisher</label>
+          <input type="text" v-model="bookForm.Publisher"
+          class="form-control" id="publisher">
+        </div>
+        <div class="mb-3">
+          <label for="pagecount" class="form-label">Page Count</label>
+          <input type="text" v-model="bookForm.page_count"
+          class="form-control" id="pagecount">
+        </div>
+        <div class="mb-3">
+          <label for="msrp" class="form-label">MSRP</label>
+          <input type="number" step="0.01" v-model="bookForm.MSRP"
+          class="form-control" id="msrp">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
     <footer> 
       <a href="https://twitter.com/mindykaling/status/499028573504946176/photo/1">
-        <img src="img/greatscott.jpg" alt="Great Scott" width="100" height="100">
+        <img src="img/trident-large.png" alt="IU" width="50" height="50">
       </a>
-      Great Scott Pages! 
+      Go IU! 
       <a href="https://twitter.com/mindykaling/status/499028573504946176/photo/1">
-          <img src="img/greatscott.jpg" alt="Great Scott" width="100" height="100">
+          <img src="img/trident-large.png" alt="IU" width="50" height="50">
       </a>
    </footer>
    <script src="js/index.js"></script>

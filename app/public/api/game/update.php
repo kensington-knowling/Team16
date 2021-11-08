@@ -43,7 +43,8 @@ $stmt->execute([
   $_POST['field'],
   $_POST['time'],
   $_POST['game_id']
-]);
+);
+
 
 // Get auto-generated PK from DB
 // https://www.php.net/manual/en/pdo.lastinsertid.php
