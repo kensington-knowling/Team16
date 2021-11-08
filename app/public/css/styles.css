@@ -1,16 +1,29 @@
 body {}
 
 
+<<<<<<< Updated upstream:app/public/css/styles.css
+=======
+
+/* 
+>>>>>>> Stashed changes:app/public/css/style.css
 .student {
     margin: 10px 2px;
     padding: 4px;
     border: 1px solid gray;
     background-color: antiquewhite;
+<<<<<<< Updated upstream:app/public/css/styles.css
 }
 
 .selected {
     background-color: burlywood;
 }
+=======
+} */
+/* 
+.selected {
+    background-color: burlywood;
+} */
+>>>>>>> Stashed changes:app/public/css/style.css
 
 .userName {
     font-weight:bold;
@@ -31,13 +44,19 @@ footer {
     color: white;
     font-family: sans-serif;
     text-align: center;
-    border: 1.2px solid black;
+    border: 1.2px solid gray;
     padding: 10px;
 }
 
+<<<<<<< Updated upstream:app/public/css/styles.css
 body {
     background-color: white;
 }
+=======
+/* body {
+    background-color: white;
+} */
+>>>>>>> Stashed changes:app/public/css/style.css
 
 header {
     background-color: #7A1705;

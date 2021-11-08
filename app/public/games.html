@@ -1,7 +1,11 @@
 <!doctype html>
 <html>
   <head>
+<<<<<<< Updated upstream
     <title>My Page Title</title>
+=======
+    <title>Indiana Refs - Games</title>
+>>>>>>> Stashed changes
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://unpkg.com/vue@next"></script>
@@ -9,6 +13,7 @@
   </head>
   <body>
     <header>
+<<<<<<< Updated upstream
         <a href="https://assets.iu.edu/brand/3.2.x/trident-large.png">
             <img src="img/trident-large.png" alt="IU Logo" width="50" height="50">
         </a>
@@ -20,12 +25,27 @@
     <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+=======
+      <br>
+      <h1 class="text-white">
+      INDIANA SOCCER REFEREES ASSOCIATION
+      </h1>
+      <br>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" aria-haspopup="true" data-toggle="dropdown" id='dropdownMenuLinl' role='button' href='#'>
+>>>>>>> Stashed changes
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
+<<<<<<< Updated upstream
               <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+=======
+              <a class="nav-link" href="index.html">Home</a>
+>>>>>>> Stashed changes
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="games.html">Games</a>
@@ -43,9 +63,55 @@
         </div>
       </div>
     </nav>
+<<<<<<< Updated upstream
     <p>
       Stuff goes in here
     </p>
+=======
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="games.html">Games<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="referees.html">Referees<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="assignment.html">Assignment<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reports.html">Reports<span class="sr-only"></span></a>
+          </li>
+        </ul>
+      </div>
+    </nav> -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="index.html">Home</a>
+          <a class="nav-item nav-link" href="games.html">Games</a>
+          <a class="nav-item nav-link" href="referees.html">Referees</a>
+          <a class="nav-item nav-link" href="assignment.html">Assignment</a>
+          <a class="nav-item nav-link" href="reports.html">Reports</a>
+        </div>
+      </div>
+    </nav> -->
+    <div class="container">
+      <br>
+      <h3>Games</h3>
+    </div>
+>>>>>>> Stashed changes
     <div id="refApp" class="container">
       <table class="table table-primary table-striped" id="tb">
         <thead>
@@ -71,8 +137,14 @@
           </tr>
         </tbody>
       </table>
+<<<<<<< Updated upstream
       <form v-on:submit.prevent="postGame">
         <h3 id="h">{{ selectedGame === null ? "Add" : "Edit" }} Game</h3>  
+=======
+      <br>
+      <form v-on:submit.prevent="postGame">
+        <h3>{{ selectedGame === null ? "Add" : "Edit" }} Game</h3>  
+>>>>>>> Stashed changes
         <div class="mb-3">
           <label for="name" class="form-label">Opposition</label>
           <input type="text" v-model="gameForm.opposition"
@@ -84,13 +156,18 @@
           class="form-control" id="field">
         </div>
         <div class="mb-3">
+<<<<<<< Updated upstream
           <label for="skill" class="form-label">Time</label>
+=======
+          <label for="skill" class="form-label">Time (mm/dd/yyyy)</label>
+>>>>>>> Stashed changes
           <input type="text" v-model="gameForm.time"
           class="form-control" id="time">
         </div>
         <button type="submit" class="btn btn-primary">{{ selectedGame === null ? "Add" : "Edit" }} Game</button>
         <button type="button" class="btn btn-outline-secondary" v-if="selectedGame" v-on:click="resetGameForm">Cancel</button>
       </form>
+<<<<<<< Updated upstream
     </div>
     <footer> 
       <a href="https://twitter.com/mindykaling/status/499028573504946176/photo/1">
@@ -99,6 +176,17 @@
       Go IU! 
       <a href="https://twitter.com/mindykaling/status/499028573504946176/photo/1">
           <img src="img/trident-large.png" alt="IU" width="50" height="50">
+=======
+      <br>
+    </div>
+    <footer> 
+      <a>
+        <img src="img/soccerball.png" alt="IU" width="30" height="30">
+      </a>
+      X501-Core | Team 16
+      <a>
+          <img src="img/soccerball.png" alt="IU" width="30" height="30">
+>>>>>>> Stashed changes
       </a>
    </footer>
    <script src="js/index.js"></script>
