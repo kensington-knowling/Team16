@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>My Page Title</title>
+    <title>Indiana Refs - Reports</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://unpkg.com/vue@next"></script>
@@ -9,15 +9,13 @@
   </head>
   <body>
     <header>
-        <a href="https://assets.iu.edu/brand/3.2.x/trident-large.png">
-            <img src="img/trident-large.png" alt="IU Logo" width="50" height="50">
-        </a>
-        Indiana Referees 
-        <a href="https://assets.iu.edu/brand/3.2.x/trident-large.png">
-            <img src="img/trident-large.png" alt="IU Logo" width="50" height="50">
-        </a>
+      <br>
+      <h1 class="text-white">
+      INDIANA SOCCER REFEREES ASSOCIATION
+      </h1>
+      <br>
     </header>
-    <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -25,10 +23,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="games.html">Games</a>
+              <a class="nav-link" href="games.html">Games</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="referees.html">Referees</a>
@@ -37,13 +35,16 @@
               <a class="nav-link" href="assignment.html">Assignment</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="reports.html">Reports</a>
+                <a class="nav-link active" aria-current="page" href="reports.html">Reports</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    Reports
+    <div class="container">
+      <br>
+      <h3>Reports</h3>
+    </div>
     <div id="refApp" class="container">
         <form v-on:submit.prevent="fetchReportsData()">
             <div class="mb-3" class="dropdown">
@@ -90,6 +91,7 @@
         <form v-on:submit.prevent="fetchRepData()">
             <button type="submit" class="btn btn-outline-secondary btn-sm">Generate Report</button>
         </form>
+        <br>
         <table id="" class="table table-hover table-light" >
            <thead>
                <tr>
@@ -108,13 +110,14 @@
         </table>
         <p><a href="/api/reports/unassigned.php/?&format=csv" download>Export as CSV</a></p>
     </div> 
+    <br>
     <footer> 
-      <a href="https://twitter.com/mindykaling/status/499028573504946176/photo/1">
-        <img src="img/trident-large.png" alt="IU" width="50" height="50">
+      <a>
+        <img src="img/soccerball.png" alt="IU" width="30" height="30">
       </a>
-      Go IU! 
-      <a href="https://twitter.com/mindykaling/status/499028573504946176/photo/1">
-          <img src="img/trident-large.png" alt="IU" width="50" height="50">
+      X501-Core | Team 16
+      <a>
+          <img src="img/soccerball.png" alt="IU" width="30" height="30">
       </a>
    </footer>
    <script src="js/index.js"></script>

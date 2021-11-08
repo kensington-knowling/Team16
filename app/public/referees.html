@@ -9,13 +9,11 @@
   </head>
   <body>
     <header>
-        <a href="https://assets.iu.edu/brand/3.2.x/trident-large.png">
-            <img src="img/trident-large.png" alt="IU Logo" width="50" height="50">
-        </a>
-        Indiana Referees 
-        <a href="https://assets.iu.edu/brand/3.2.x/trident-large.png">
-            <img src="img/trident-large.png" alt="IU Logo" width="50" height="50">
-        </a>
+      <br>
+      <h1 class="text-white">
+      INDIANA SOCCER REFEREES ASSOCIATION
+      </h1>
+      <br>
     </header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
@@ -28,10 +26,10 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="games.html">Games</a>
+              <a class="nav-link" href="games.html">Games</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="referees.html">Referees</a>
+              <a class="nav-link active" aria-current="page" href="referees.html">Referees</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="assignment.html">Assignment</a>
@@ -43,6 +41,10 @@
         </div>
       </div>
     </nav>
+    <div class="container">
+      <br>
+      <h3>Referees</h3>
+    </div>
     <div id="refApp" class="container">
       <table class="table table-primary table-striped" id="tb">
         <thead>
@@ -70,9 +72,9 @@
           </tr>
         </tbody>
       </table>
-    
+      <br>
       <form v-on:submit.prevent="postReferee">
-        <h3 id="h">{{ selectedReferee === null ? "Add" : "Edit" }} Referee</h3>  
+        <h3>{{ selectedReferee === null ? "Add" : "Edit" }} Referee</h3>  
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
           <input type="text" v-model="refereeForm.name"
@@ -96,14 +98,15 @@
         <button type="submit" class="btn btn-primary">{{ selectedReferee === null ? "Add" : "Edit" }} Referee</button>
         <button type="button" class="btn btn-outline-secondary" v-if="selectedReferee" v-on:click="resetRefereeForm">Cancel</button>
       </form>
+      <br>
     </div>
     <footer> 
-      <a href="https://twitter.com/mindykaling/status/499028573504946176/photo/1">
-        <img src="img/trident-large.png" alt="IU" width="50" height="50">
+      <a>
+        <img src="img/soccerball.png" alt="IU" width="30" height="30">
       </a>
-      Go IU! 
-      <a href="https://twitter.com/mindykaling/status/499028573504946176/photo/1">
-          <img src="img/trident-large.png" alt="IU" width="50" height="50">
+      X501-Core | Team 16
+      <a>
+          <img src="img/soccerball.png" alt="IU" width="30" height="30">
       </a>
    </footer>
    <script src="js/index.js"></script>
