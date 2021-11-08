@@ -9,6 +9,7 @@ $sql = 'SELECT * FROM game';
 $vars = [];
 
 
+
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
 
@@ -16,6 +17,7 @@ $games = $stmt->fetchAll();
 
 // Step 3: Convert to JSON
 $json = json_encode($games, JSON_PRETTY_PRINT);
+
 
 // Step 4: Output
 header('Content-Type: application/json');
